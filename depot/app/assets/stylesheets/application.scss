@@ -15,3 +15,18 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap-custom";
  @import "bootstrap";
+
+ @keyframes line-item-highlight {
+  0% {
+    background: $primary;
+    color: white;
+  }
+  100% {
+    background: none;
+    color: null;
+  }
+}
+
+.line-item-highlight {
+  animation: line-item-highlight 1s;
+}
