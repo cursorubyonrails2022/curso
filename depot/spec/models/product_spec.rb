@@ -12,6 +12,14 @@ RSpec.describe Product, :type => :model do
     expect(subject).to_not be_valid
   end
 
+  describe "is not valid without a uniqueness title" do
+    before { create(:product_2) }
+
+    it  do
+      expect(subject).to_not be_valid
+    end
+  end
+
   it "is not valid without a description" do
     subject.description = nil
     expect(subject).to_not be_valid
