@@ -31,6 +31,7 @@
                     </p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
+                        <%= button_to 'Agregar', line_items_path(product_id: product), class: "btn btn-sm btn-outline-primary" %>
                       </div>
                       <small class="text-muted">
                         <%= sprintf("C$%0.02f", product.price) %>
