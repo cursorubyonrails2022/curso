@@ -1,6 +1,13 @@
-<h1>Editing Product</h1>
-
-<%= render 'form', product: @product %>
-
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<div class="card">
+  <div class="card-header">
+    Editando Producto
+    <span class="badge bg-secondary">Id: <%= @product.id %></span>
+  </div>
+  <div class="card-body">
+    <%= render 'form', product: @product %>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Mostrar', @product %> |
+    <%= link_to 'Regresar', products_path %>
+  </div>
+</div>
