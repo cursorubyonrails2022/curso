@@ -1,0 +1,46 @@
+<p id="notice">
+  <%= notice %>
+</p>
+<main>
+
+  <section class="py-1 text-center container">
+    <div class="row py-lg-1">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Productos Disponibles</h1>
+        <p class="lead text-muted">Compre con tranquilidad, el día de pago le hacemos la cuenta.</p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% @products.each do |product| %>
+          <div class="col">
+            <div class="card shadow-sm border-primary">
+              <%= image_tag(product.image_url, width: "100%" , height: "225" , class: "bd-placeholder-img card-img-top"
+                ) %>
+                <div class="card-body">
+                  <p class="card-text">
+                  <h3>
+                    <%= product.title %>
+                  </h3>
+                  <%= sanitize(product.description) %>
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                      </div>
+                      <small class="text-muted">
+                        <%= sprintf("C$%0.02f", product.price) %>
+                      </small>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</main>
