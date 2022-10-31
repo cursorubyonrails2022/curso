@@ -15,6 +15,13 @@
             </div>
           </nav>
           <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+            <% flash.each do |type, msg| %>
+              <div class="alert alert-<%= type == 'notice' ? 'success' : 'danger' %>" role="alert">
+                <%= msg %>
+              </div>
+            <% end %>
+
             <div class="bg-light p-5 rounded <%= controller.controller_name %>">
               <%= yield %>
             </div>

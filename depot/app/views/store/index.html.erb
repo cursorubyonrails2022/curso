@@ -1,6 +1,3 @@
-<p id="notice">
-  <%= notice %>
-</p>
 <main>
 
   <section class="py-1 text-center container">
@@ -31,7 +28,11 @@
                     </p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
+                      <% if user_signed_in? %>
                         <%= button_to 'Agregar', line_items_path(product_id: product), class: "btn btn-sm btn-outline-primary", remote: true  %>
+                      <% else %>
+                      <%= button_to 'Agregar', '', class: "btn btn-sm btn-outline-primary", disabled: 'disabled' %>
+                      <% end %>
                       </div>
                       <small class="text-muted">
                         <%= sprintf("C$%0.02f", product.price) %>
