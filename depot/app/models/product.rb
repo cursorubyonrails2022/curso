@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  audited
+
   has_many :line_items
 
   validates :title, :description, :price, presence: true

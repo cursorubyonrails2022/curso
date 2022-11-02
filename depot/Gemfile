@@ -34,6 +34,9 @@ gem 'bootstrap', '~> 5.2.2'
 # Flexible authentication solution for Rails with Warden.
 gem 'devise'
 
+# Audited (formerly acts_as_audited) is an ORM extension that logs all changes to your Rails models.
+gem "audited", "~> 5.0"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
